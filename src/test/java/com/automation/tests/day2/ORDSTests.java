@@ -54,11 +54,25 @@ public class ORDSTests {
            int statusCode = response.statusCode(); // to save status code in variabl
 
            Assertions.assertEquals(200,statusCode);
-       }
 
-       @Test
+           //if assertions fails, you will get this kind of message:
+           /**
+            * java.lang.AssertionError: 1 expectation failed.
+            * Expected status code <201> but was <200>.
+            * 200 is always expected status code after GET requset
+            */
+       }
+    /**
+     * given base URI = http://3.90.112.152:1000/ords/hr
+     * when user sends get request to "/countries"
+     * then user verifies that status code is 200
+     */
+
+    @Test
        @DisplayName("Get list of all countries and verify that status code is 200")
        public void getAllCountries(){
          given().baseUri(BASE_URL).when().get("/countries").prettyPeek().then().statusCode(200);
+
+        ///statusLine - to verify status line
        }
 }
