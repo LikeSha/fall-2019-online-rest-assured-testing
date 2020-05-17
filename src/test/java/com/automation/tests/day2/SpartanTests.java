@@ -1,5 +1,6 @@
 package com.automation.tests.day2;
 
+import io.restassured.http.ContentType;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -13,8 +14,39 @@ public class SpartanTests {
     //URN (Uniform Resource Name)    =  /index.html
 
     @Test
-    @DisplayName("Get list of all spartans")
+    @DisplayName("Get list of all spartans") //optional
     public void getAllSpartans(){
-       given().baseUri(BASE_URL).when().get("/api/spartans").then().statusCode(200);
+        //401 - unauthorized, since we didn't provide credentials request failedx
+        //how to provide credentials?
+        //there different types of authentication: basic, oauth 1.0,  oauth 2.0, api key, bearer token, etc...
+        //spartan app requires basic authentication: username and password
+
+        given().
+                auth().basic("admin", "admin").
+                baseUri(BASE_URL).
+                when().
+                get("/api/spartans").prettyPeek().
+                then().statusCode(200);
     }
+    //add new spartan
+
+    @Test
+    @DisplayName("Add new spartan")
+    public void addSpartan(){
+        //JSON supports different data types: string, integer, boolean
+        String body = "{\"gender\": \"Male\", \"name\": \"Random User\", \"phone\": 9999999999}";
+
+        //to create new item, we perform POST request
+        given().
+                contentType(ContentType.JSON).
+                auth().basic("admin", "admin").
+                body(body).
+                baseUri(BASE_URL).
+                when().
+                post("/api/spartans").prettyPeek().
+                then().
+                statusCode(201);
+
+    }
+
 }
