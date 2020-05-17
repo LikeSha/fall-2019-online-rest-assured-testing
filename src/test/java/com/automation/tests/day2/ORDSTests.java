@@ -2,6 +2,7 @@ package com.automation.tests.day2;
 
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -50,8 +51,14 @@ public class ORDSTests {
 
            response.then().statusCode(200);// to verify that status is 200
 
-           int statusCode = response.statusCode(); // to save status code in variable
+           int statusCode = response.statusCode(); // to save status code in variabl
+
+           Assertions.assertEquals(200,statusCode);
        }
 
-
+       @Test
+       @DisplayName("Get list of all countries and verify that status code is 200")
+       public void getAllCountries(){
+         given().baseUri(BASE_URL).when().get("/countries").prettyPeek().then().statusCode(200);
+       }
 }
