@@ -61,7 +61,7 @@ public class SpartanTests {
     public void deleteSpartanTest(){
         //{id} - path parameter
         //YOU CANNOT DELETE SOMETHING TWICE
-        //we yse delete() method to delete something
+        //we use delete() method to delete something
         //204 - No content, most common status code for successful delete action
         //authentication - who you are? you need to tell to the server who you are before getting any data
         //ALL HTTP STATUS CODES HAVE SAME MEANING EVERYWHERE
