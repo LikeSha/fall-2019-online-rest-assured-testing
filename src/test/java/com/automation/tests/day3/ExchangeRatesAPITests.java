@@ -35,7 +35,7 @@ public class ExchangeRatesAPITests {
         //with rest assured, we provide query parameters into given() part.
         //give() - request preparation
         //you can specify query parameters in URL explicitly: http://api.openrates.io/latest?base=USD
-        //rest assured, will just assemble URL for you
+        //(if you specify like the above line )rest assured, will just assemble URL for you
         Response response = given().
                 queryParam("base", "USD").
                 when().
