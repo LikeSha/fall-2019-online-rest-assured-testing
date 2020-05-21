@@ -41,6 +41,11 @@ public class ExchangeRatesAPITests {
                 when().
                 get("/latest").prettyPeek(); // prettyPeek(); method just to see response in the console
 
+         //http://api.openrates.io/latest?base=USD in this part ,
+        // the part of "?base=USD" is called query parameter .
+        // you can define the query parameter like this :
+        // Response response = given().queryParam("base", "USD").when().get("/latest").prettyPeek();
+
         //to read header of the response
         Headers headers = response.getHeaders();//all headers
         String contentType = headers.getValue("Content-Type");
