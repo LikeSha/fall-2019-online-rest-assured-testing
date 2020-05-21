@@ -21,7 +21,7 @@ public class ExchangeRatesAPITests {
     @BeforeAll // must be static
     public static void setup() {
         //for every single request this is a base URI
-        baseURI = "http://api.openrates.io";
+        baseURI = "http://api.openrates.io";// this is resuorce path ,also known as " end point"
     }
 
     //get latest currency rates
@@ -39,7 +39,7 @@ public class ExchangeRatesAPITests {
         Response response = given().
                 queryParam("base", "USD").
                 when().
-                get("/latest").prettyPeek();
+                get("/latest").prettyPeek(); // prettyPeek(); method just to see response in the console
 
         //to read header of the response
         Headers headers = response.getHeaders();//all headers

@@ -115,6 +115,24 @@ public class ORDSTestsDay4 {
         System.out.println("Company's payroll: " + companysPayroll);
     }
 
+      /*
+      given path parameter is "/employees"
+      when user makes get request
+      then assert that status code is 200
+      Then user verifies that every employee has positive salary
+       */
+
+       @Test
+       @DisplayName("")
+       public void tesSalary(){
+           when().
+                   get("/employees").
+           then().assertThat().
+                   statusCode(200).
+                   body("items.salary",everyItem(greaterThan(0))).
+                   log().ifError();
+       }
+
 
 }
 
