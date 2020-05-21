@@ -53,7 +53,8 @@ public class ExchangeRatesAPITests {
 
         //verify that GET request to the endpoint was successful
         response.then().statusCode(200);
-        response.then().assertThat().body("base", is("USD"));
+        response.then().assertThat().body("base", is("USD"));// is, or equalTo, or contains
+        // contains is coming from hamcrest.Matchers ,very powerful tool
 
         //let's verify that response contains today's date
         //this line returns today's date in the required format:  yyyy-MM-dd
