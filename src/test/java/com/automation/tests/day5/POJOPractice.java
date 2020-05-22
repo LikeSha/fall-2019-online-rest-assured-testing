@@ -2,6 +2,7 @@ package com.automation.tests.day5;
 
 import com.automation.pojos.Spartan;
 import com.automation.utilities.ConfigurationReader;
+import com.google.gson.Gson;
 import io.restassured.http.ContentType;
 import io.restassured.http.Headers;
 import io.restassured.path.json.JsonPath;
@@ -41,6 +42,10 @@ public class POJOPractice {
         Spartan spartan = response.as(Spartan.class);
         System.out.println(spartan);
 
+        assertEquals(393,spartan.getId());
+        assertEquals("Michael Scott",spartan.getName());
+        assertEquals("Male",spartan.getGender());
+
         //deserialization : POJO <-JSON
         //serialization:    POJO->JSON
         //both operations are done with a help of GSon
@@ -49,6 +54,37 @@ public class POJOPractice {
         Map<String ,? > spartanAsMap = response.as(Map.class);
         System.out.println(spartanAsMap);
 
+    }
+
+    @Test
+    public void addUser() {
+        Spartan spartan = new Spartan("Hasan Jan", "Male", 31231241121L);
+
+        Gson gson = new Gson();
+        String pojoAsJSON = gson.toJson(spartan);
+        System.out.println(pojoAsJSON);
+
+        Response response = given().
+                auth().basic("admin", "admin").
+                contentType(ContentType.JSON).
+                body(spartan).
+                when().
+                post("/spartans").prettyPeek();
+
+        response.then().statusCode(201);//to ensure that user was created
+
+        int usersId = response.jsonPath().getInt("data.id");
+
+        System.out.println("Users id :: " + usersId);
+
+        System.out.println("####DELETE USER####");
+
+        given().
+                auth().basic("admin", "admin").
+                when().
+                delete("/spartans/{id}", usersId).prettyPeek().
+                then().
+                assertThat().statusCode(204);//to ensure that user was deleted
     }
 
 }
