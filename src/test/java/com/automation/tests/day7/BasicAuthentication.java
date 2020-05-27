@@ -49,7 +49,7 @@ public class BasicAuthentication {
     @Test
     public void authenticationTest(){
         baseURI = ConfigurationReader.getProperty("SPARTAN.URI");
-        //if don't provide credentials, we must get 401status code
+        //if don't provide credentials, we must get 401 status code
         get("/spartans").prettyPeek().then().statusCode(401);
     }
 
