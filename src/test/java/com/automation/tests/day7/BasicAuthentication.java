@@ -46,4 +46,13 @@ public class BasicAuthentication {
          * Authorization problem - you logged in but cannot do some actions.
          */
     }
+    @Test
+    public void authenticationTest(){
+        baseURI = ConfigurationReader.getProperty("SPARTAN.URI");
+        //if don't provide credentials, we must get 401status code
+        get("/spartans").prettyPeek().then().statusCode(401);
+    }
+
+
+
 }
