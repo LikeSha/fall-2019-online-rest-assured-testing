@@ -73,6 +73,8 @@ public class ORDSTests {
        public void getAllCountries(){
          given().baseUri(BASE_URL).when().get("/countries").prettyPeek().then().statusCode(200);
 
+         //given().baseUri(BASE_URL).when().get("/countries").prettyPeek().then().statusLine;
+
         ///statusLine - to verify status line
        }
 }
