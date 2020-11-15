@@ -53,6 +53,8 @@ public class ExchangeRatesAPITests {
 
         //verify that GET request to the endpoint was successful
         response.then().statusCode(200);
+        //BUT How can we verify that inside jason response body is USD ?
+        // in another word: this test is : we verify that base currency is USD as we requested!
         response.then().assertThat().body("base", is("USD"));// is, or equalTo, or contains
         // contains is coming from hamcrest.Matchers ,very powerful tool
 
