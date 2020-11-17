@@ -82,7 +82,8 @@ public class ORDSTestsDay4 {
         String countryName = response.jsonPath().getString("items.find{it.country_id == 'US'}.country_name");
         Map<String, Object> countryUS = response.jsonPath().get("items.find{it.country_id == 'US'}");
         // in above two line of code , "find" method is called groovy method, its GPpath method, it normally like this:
-        //get(items.find{it.country_id == 'US'}.country_name) <-- behind " it" its key and value
+        //getString(items.find{it.country_id == 'US'}.country_name) <-- behind " it" its key and value
+        //or get(items.find{it.country_id == 'US'};
         // "it" method just simply take it as a loop. it will check all country id.
         //if you dont want to extract the name part,( country_name) , just dont put it behind.
         //find all country names from region 2
