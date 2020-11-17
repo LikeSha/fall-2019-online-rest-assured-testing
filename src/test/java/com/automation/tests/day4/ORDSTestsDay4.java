@@ -113,6 +113,10 @@ public class ORDSTestsDay4 {
         Map<String, ?> bestEmployee = response.jsonPath().get("items.max{it.salary}");
         Map<String, ?> poorGuy = response.jsonPath().get("items.min{it.salary}");
 
+        //Map<String,?>  this "?" means, you dont know the data type value, because there are too many values in there.
+        // some values are Integer, some are string.... if data type mixed up like this ,you can either use Object ,
+        //or simply us question mark "?"
+
         int companysPayroll = response.jsonPath().get("items.collect{it.salary}.sum()");
 
         System.out.println(bestEmployee);
