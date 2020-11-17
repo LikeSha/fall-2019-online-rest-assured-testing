@@ -81,6 +81,8 @@ public class ORDSTestsDay4 {
 
         String countryName = response.jsonPath().getString("items.find{it.country_id == 'US'}.country_name");
         Map<String, Object> countryUS = response.jsonPath().get("items.find{it.country_id == 'US'}");
+        // in above two line of code , "find" method is called groovy method, its GPpath method, it normally like this:
+        // items.find{it.country_id == 'US'} <-- behind " it" its key and value
         //find all country names from region 2
         //collectionName.findAll{it.propertyName == 'Value'} -- to get collection objects where property equals to some value
         //collectionName.find{it.propertyName == 'Value'} -- to object where property equals to some value
