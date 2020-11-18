@@ -82,6 +82,8 @@ public class Spartan {
                 '}';
     }
 
+    // right click mouth ,select " generate " --> select " equals and hashCode" to auto generate equal method to
+    // compare two objects.
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
