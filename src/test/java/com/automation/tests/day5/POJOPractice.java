@@ -42,6 +42,7 @@ public class POJOPractice {
         Spartan spartan = response.as(Spartan.class);
         System.out.println(spartan);
 
+
         assertEquals(393,spartan.getId());
         assertEquals("Michael Scott",spartan.getName());
         assertEquals("Male",spartan.getGender());
@@ -53,6 +54,10 @@ public class POJOPractice {
 
         Map<String ,? > spartanAsMap = response.as(Map.class);
         System.out.println(spartanAsMap);
+        // above two lines of code told us : any Json object can be represented as a Map.
+        //because it is Key-Value collection. but If we want to be more specific, we can
+        //create custom class and store that json into POJO, that's why we created Spartan class.
+        //in case of Map, Key is the property name, and value is the value
 
     }
 
