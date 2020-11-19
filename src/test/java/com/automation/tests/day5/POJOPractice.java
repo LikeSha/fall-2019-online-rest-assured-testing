@@ -61,7 +61,7 @@ public class POJOPractice {
 
     }
 
-    @Test
+    @Test // this test is how we can create java object and send it to the server to create an user
     public void addUser() {
         Spartan spartan = new Spartan("Hasan Jan", "Male", 31231241121L);
 
