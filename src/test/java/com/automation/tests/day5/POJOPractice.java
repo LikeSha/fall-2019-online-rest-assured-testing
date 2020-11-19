@@ -71,7 +71,7 @@ public class POJOPractice {
 
         Response response = given().
                 auth().basic("admin", "admin").
-                contentType(ContentType.JSON).
+                contentType(ContentType.JSON).// this line we must write becasue If we want to send something in server,it required contentType
                 body(spartan).
                 when().
                 post("/spartans").prettyPeek();
