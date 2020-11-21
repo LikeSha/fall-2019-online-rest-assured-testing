@@ -64,7 +64,7 @@ public class POJOPracticeWithSpartanApp {
         response.then().statusCode(201);
         response.then().body("success", is("A Spartan is Born!"));
 
-        //deserialization
+        //deserialization how we store this jason response into java object ? below line of code answer this question.
         Spartan spartanResponse = response.jsonPath().getObject("data", Spartan.class);
         Map<String, Object> spartanResponseMap = response.jsonPath().getObject("data", Map.class);
 
