@@ -18,6 +18,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import static io.restassured.RestAssured.*;
@@ -160,6 +161,28 @@ public class POJOPracticeWithSpartanApp {
 
         int userId = 21;// user to update
 
+        // let's pt the code to take random user
+        // get all spartans
+        Response response0 = given().accept(ContentType.JSON).when().get("/spartans");
+        //I can save them all in the array list
+        List<Spartan> allSpartans = response0.jsonPath().getList("",Spartan.class);// path is an empty string is
+        // because the collection available immediately , there is no name for this collection, that's why
+        // the path part is empty
+        System.out.println(allSpartans);
+
+        // now ,how we can randomly take user id ?
+        // generate random number
+        Random random = new Random();
+
+        int randomNum = random.nextInt(allSpartans.size());
+        int randomUserID = allSpartans.get(randomNum).getId();
+
+        userId = randomUserID;// to assign random user id
+
+
+        // below entire code PLUS line 162 : int userId = 21;// user to update is to patch specific ID
+        //so if you want to update partial info ON ONE SPECIFIC ID, use this bunch of code
+        // if you want to random update id to change to name Aidar, you use from line 145 till this bottom of class
         Map<String,String> update = new HashMap<>();
         update.put("name","Aidar");
 
