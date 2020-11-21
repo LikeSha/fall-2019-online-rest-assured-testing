@@ -95,7 +95,7 @@ public class POJOPracticeWithSpartanApp {
 
         //update property that you need without affecting other properties
         System.out.println("Before update: "+spartanToUpdate);
-        spartanToUpdate.setName(name);//change only name
+        spartanToUpdate.setName(name);//change only name we use set method to change only name, rest of parameters remain unchanged.
         System.out.println("After update: "+spartanToUpdate);
 
         //request to update existing user with id 101  ,THIS BELOW LINENS OF CODES IS AFTER WE SET NAME (update the name)
