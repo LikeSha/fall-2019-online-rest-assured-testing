@@ -103,7 +103,16 @@ public class POJOPracticeWithSpartanApp {
                 contentType(ContentType.JSON).
                 body(spartanToUpdate).
                 when().
-                put("/spartans/{id}", userToUpdate).prettyPeek();
+                put("/spartans/{id}", userToUpdate).prettyPeek(); // from this line of code ,we know it is
+        //a PUT request , now its more clear the samilarity and difference of POST request and PUT request is :
+        // in both request ,we provide the entire JSON body for request , BUT when POST request ,
+        // we dont specify the user id because its gonna be a new user, new instance. like this :
+        // when().
+        //      post("/spartans").prettyPeek();
+        // in case of PUT request ,we are updating existing instance, in this case ,We are gonna to update
+        //user 101 , so our code is like this :
+        //when().
+        //     put("/spartans/{id}", userToUpdate).prettyPeek();
 
         //verify that status code is 204 after update
         response.then().statusCode(204);
