@@ -86,7 +86,7 @@ public class POJOPracticeWithSpartanApp {
 
         Spartan spartan = new Spartan(name, "Male", 123112312312L);
 
-        //get spartan from web service
+        //get spartan from web service this code is using for in case spartan has lots of parameters.
         Spartan spartanToUpdate = given().
                 auth().basic("admin", "admin").
                 accept(ContentType.JSON).
