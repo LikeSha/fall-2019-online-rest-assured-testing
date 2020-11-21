@@ -92,6 +92,7 @@ public class POJOPracticeWithSpartanApp {
                 accept(ContentType.JSON).// accept(ContentType.JSON) = import  contentType(ContentType.JSON) = export
                 when().
                 get("/spartans/{id}", userToUpdate).as(Spartan.class);
+
         //update property that you need without affecting other properties
         System.out.println("Before update: "+spartanToUpdate);
         spartanToUpdate.setName(name);//change only name
