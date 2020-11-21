@@ -138,5 +138,47 @@ public class POJOPracticeWithSpartanApp {
         5xx	     Error	          Please report a bug to support@oneskyapp.com
          */
 
+
+    }
+
+    @Test
+    @DisplayName("Verify that user can perform PATCH request")
+    public void patchUsrTest1(){
+      // PATCH--partial update of existing record
+        // PUT request requires entire body ,so you have to list all properties in your request. when you send
+        // PUT request , it does't matter how many parameters you want to update, 1 or 2 or 3.... but you must
+        // list all of them in your request .otherwise the request not going to be successful.
+        //PATCH request does not require all parameters, you can just specify those parameters you want to update
+        //that's why this step is NOT REQURIED IN PATCH request :
+        /*
+        Spartan spartanToUpdate = given().
+                auth().basic("admin", "admin").
+                accept(ContentType.JSON).// accept(ContentType.JSON) = import  contentType(ContentType.JSON) = export
+                when().
+                get("/spartans/{id}", userToUpdate).as(Spartan.class);
+         */
+
+        int userId = 21;// user to update
+
+        Map<String,String> update = new HashMap<>();
+        update.put("name","Aidar");
+
+        // this is the request to update user
+        Response response = given().
+                                  contentType(ContentType.JSON).
+                                  body(update).
+                            when().
+                                  patch("/spartans/{id}",userId);
+
+        response.then().assertThat().statusCode(204);
+
+        //after we sent PATCH request ,let's make sure that name is updated.
+        //this is a request to verify that name was updated and status code is correct as well
+
+        given().
+                accept(ContentType.JSON).
+        when().
+                get("/spartans/{id}",userId).
+        then().assertThat().statusCode(200).body("name",is("Aidar"));
     }
 }
