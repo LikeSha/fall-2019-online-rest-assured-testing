@@ -176,8 +176,10 @@ public class POJOPracticeWithSpartanApp {
 
         int randomNum = random.nextInt(allSpartans.size());
         int randomUserID = allSpartans.get(randomNum).getId();
+        System.out.println("NAME BEFORE : " +allSpartans.get(randomNum).getName());
 
         userId = randomUserID;// to assign random user id
+        System.out.println(allSpartans);
 
 
         // below entire code PLUS line 162 : int userId = 21;// user to update is to patch specific ID
