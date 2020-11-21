@@ -114,7 +114,7 @@ public class POJOPracticeWithSpartanApp {
         //when().
         //     put("/spartans/{id}", userToUpdate).prettyPeek();
 
-        //verify that status code is 204 after update
+        //verify that status code is 204 after update , 204 code with no body no content.
         response.then().statusCode(204);
         System.out.println("##############################################");
         //to get user with id 101, the one that we've just updated
