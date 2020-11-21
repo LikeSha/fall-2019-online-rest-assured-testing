@@ -89,7 +89,7 @@ public class POJOPracticeWithSpartanApp {
         //get spartan from web service this code is using for in case spartan has lots of parameters.
         Spartan spartanToUpdate = given().
                 auth().basic("admin", "admin").
-                accept(ContentType.JSON).
+                accept(ContentType.JSON).// accept(ContentType.JSON) = import  contentType(ContentType.JSON) = export
                 when().
                 get("/spartans/{id}", userToUpdate).as(Spartan.class);
         //update property that you need without affecting other properties
@@ -100,7 +100,7 @@ public class POJOPracticeWithSpartanApp {
         //request to update existing user with id 101
         Response response = given().
                 auth().basic("admin", "admin").
-                contentType(ContentType.JSON).
+                contentType(ContentType.JSON).// accept(ContentType.JSON) = import  contentType(ContentType.JSON) = export
                 body(spartanToUpdate).
                 when().
                 put("/spartans/{id}", userToUpdate).prettyPeek(); // from this line of code ,we know it is
