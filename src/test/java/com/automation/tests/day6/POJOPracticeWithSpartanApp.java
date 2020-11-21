@@ -126,5 +126,15 @@ public class POJOPracticeWithSpartanApp {
                 statusCode(200).body("name", is(name));
         //verify that name is correct, after update
 
+        /*
+        200	     OK	              We received the request
+        201	     Created	      We received the request and created something.
+                                  For example, we received a file upload request and a file is created.
+        204	     No content	      Incorrect locale used
+        400	     Bad request	  Incorrect parameters (input data)
+        401	     Unauthorized	  Authentication error: invalid API key, miscalculated dev hash, etc. More details.
+        5xx	     Error	          Please report a bug to support@oneskyapp.com
+         */
+
     }
 }
