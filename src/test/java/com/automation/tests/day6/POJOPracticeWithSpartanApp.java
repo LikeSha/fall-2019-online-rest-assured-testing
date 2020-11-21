@@ -98,7 +98,8 @@ public class POJOPracticeWithSpartanApp {
         spartanToUpdate.setName(name);//change only name
         System.out.println("After update: "+spartanToUpdate);
 
-        //request to update existing user with id 101
+        //request to update existing user with id 101  ,THIS BELOW LINENS OF CODES IS AFTER WE SET NAME (update the name)
+        //we send it back to server the new info.
         Response response = given().
                 auth().basic("admin", "admin").
                 contentType(ContentType.JSON).// accept(ContentType.JSON) = import  contentType(ContentType.JSON) = export
