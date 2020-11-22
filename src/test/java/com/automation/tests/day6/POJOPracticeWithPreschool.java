@@ -1,5 +1,6 @@
 package com.automation.tests.day6;
 
+import com.automation.pojos.Student;
 import com.automation.utilities.ConfigurationReader;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
@@ -34,6 +35,13 @@ public class POJOPracticeWithPreschool {
         int studentId = response.jsonPath().getInt("studentId");
         System.out.println("studentId : " + studentId);
 
+    }
+
+    @Test
+    public void getStudentTest(){
+        Response response = get("/student/{id}",11613);
+
+        Student student = response.as(Student.class); // this is to save the specific this student object.
     }
 
 }
