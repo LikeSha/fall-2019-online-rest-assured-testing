@@ -39,9 +39,16 @@ public class POJOPracticeWithPreschool {
 
     @Test
     public void getStudentTest(){
-        Response response = get("/student/{id}",11613);
+        Response response = get("/student/{id}",11613).prettyPeek();
 
-        Student student = response.as(Student.class); // this is to save the specific this student object.
+ //       Student student = response.as(Student.class); // this is to save the specific this student object.
+        // above one line code not working because student located in student array, since this object
+        // is not working immediately,it is inside the student collection , thats why we have to
+        // abstract student object with jsonPath . so we have to say :
+
+        Student student = response.jsonPath().getObject("students[0]",Student.class);// abstract the first student.
+
+        // after we run this code ,it works. the result we need is on the very bottom of console.
     }
 
 }
