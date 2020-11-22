@@ -1,10 +1,10 @@
 package com.automation.pojos;
 
-
 import com.google.gson.annotations.SerializedName;
+import sun.awt.image.ImageWatched;
 
-import java.util.Arrays;
-
+import java.util.List;
+import java.util.Map;
 
 /**
  * {
@@ -27,37 +27,32 @@ import java.util.Arrays;
  *             ]
  *         },
  */
-
 public class Employee {
-      @SerializedName("employee_id")
-      private int employeeId;
-      @SerializedName("first_name")
-      private String firstName;
-      @SerializedName("last_name")
-      private String lastName;
-      private String email; // --> since name is the same ,no need to use @SerializedName
-      @SerializedName("phone_number")
-      private String phoneNumber;
-      @SerializedName("hire_date")
-      private String hireDate;
-      @SerializedName("job_id")
-      private String jobId;
-      private int salary;
-      @SerializedName("commission_pct")
-      private double commissionPct;
-      @SerializedName("manager_id")
-      private int managerId;
-      @SerializedName("department_id")
-      private int departmentId;
-      private String[] links;
+    @SerializedName("employee_id")
+    private int employeeId;
+    @SerializedName("first_name")
+    private String firstName;
+    @SerializedName("last_name")
+    private String lastName;
+    private String email; // --> "email": "SKING", since name is the same, no need to use @SerializedName
+    @SerializedName("phone_number")
+    private String phoneNumber;
+    @SerializedName("hire_date")
+    private String hireDate;
+    @SerializedName("job_id")
+    private String jobId;
+    private int salary;
+    @SerializedName("commission_pct")
+    private double commissionPct;
+    @SerializedName("manager_id")
+    private int managerId;
+    @SerializedName("department_id")
+    private int departmentId;
+    private List<Map<String,Object>> links;
 
     public int getEmployeeId() {
         return employeeId;
     }
-
-//    public void setEmployeeId(int employeeId) {  Since we dont need to set employee id ,id is fixed ,so
-//        this.employeeId = employeeId;            we simply removed setEmployeeId method.
-//    }
 
     public String getFirstName() {
         return firstName;
@@ -135,15 +130,12 @@ public class Employee {
         return departmentId;
     }
 
-    public void setDepartmentId(int departmentId) {
-        this.departmentId = departmentId;
-    }
 
-    public String[] getLinks() {
+    public List<Map<String, Object>> getLinks() {
         return links;
     }
 
-    public void setLinks(String[] links) {
+    public void setLinks(List<Map<String, Object>> links) {
         this.links = links;
     }
 
@@ -161,7 +153,7 @@ public class Employee {
                 ", commissionPct=" + commissionPct +
                 ", managerId=" + managerId +
                 ", departmentId=" + departmentId +
-                ", links=" + Arrays.toString(links) +
+                ", links=" + links +
                 '}';
     }
 }
