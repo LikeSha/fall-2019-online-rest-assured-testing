@@ -49,6 +49,7 @@ public class POJOPracticeWithPreschool {
         Student student = response.jsonPath().getObject("students[0]",Student.class);// abstract the first student.
 
         // after we run this code ,it works. the result we need is on the very bottom of console.
+        // it is the first student information.
     }
 
 }
