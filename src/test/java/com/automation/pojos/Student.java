@@ -56,9 +56,9 @@ public class Student {
         return studentId;
     }
 
-    public void setStudentId(int studentId) {
-        this.studentId = studentId;
-    }
+//    public void setStudentId(int studentId) {
+//        this.studentId = studentId;         we never set student id ,so we can just delete this setter
+//    }
 
     public String getFirstName() {
         return firstName;
