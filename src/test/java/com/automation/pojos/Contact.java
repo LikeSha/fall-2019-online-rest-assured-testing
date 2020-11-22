@@ -11,6 +11,8 @@ contact": {
         * },
 
  */
+
+// this class represent contact object
 public class Contact {
 
     private int contactId;
