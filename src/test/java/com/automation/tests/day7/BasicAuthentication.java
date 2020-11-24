@@ -65,6 +65,11 @@ public class BasicAuthentication {
       We are communicating with web service according to HTTP protocol! If it is SOAP service, we use SOAP protocol.
       SOAP protocol based in HTTP. but Restful service ( Rest is an architech , its NOT A PROTOCOL!) ITS  a set of
       principles to develop web services.
+
+      when we access data through UI or Restful service ,we all use HTTP protocol, what is the difference between them?
+      ContentType !
+      what is the contentType of UI ? HTML,
+      what is the contentType of Restful ? Json or xml , most of time are Json.
      */
 
     @Test
