@@ -56,6 +56,13 @@ public class BasicAuthentication {
         get("/spartans").prettyPeek().then().statusCode(401);
     }
 
+    /*
+      With Selenium WebDriver, we are testing User Interface (UI) of web applications, but never works servers.
+      Web service, returns data as Json OR xml
+      Restful services return as Json -- which protocol do we use to get data from the Restful server? HTTP !
+      get, put, post , delete, patch.....
+     */
+
     @Test
      public void authenticationTest2(){
         baseURI = "http://practice.cybertekschool.com";
