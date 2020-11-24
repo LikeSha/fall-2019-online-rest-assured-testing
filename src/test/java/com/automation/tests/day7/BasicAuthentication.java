@@ -61,6 +61,10 @@ public class BasicAuthentication {
       Web service, returns data as Json OR xml
       Restful services return as Json -- which protocol do we use to get data from the Restful server? HTTP !
       get, put, post , delete, patch.....
+
+      We are communicating with web service according to HTTP protocol! If it is SOAP service, we use SOAP protocol.
+      SOAP protocol based in HTTP. but Restful service ( Rest is an architech , its NOT A PROTOCOL!) ITS  a set of
+      principles to develop web services.
      */
 
     @Test
