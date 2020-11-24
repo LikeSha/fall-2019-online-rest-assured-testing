@@ -17,7 +17,7 @@ public class APIKey {
 
     @BeforeAll
     public static void setup(){
-        baseURI = "http://omdbapi.com/";
+        baseURI = "http://omdbapi.com/"; // this is end point
     }
 
     @Test
