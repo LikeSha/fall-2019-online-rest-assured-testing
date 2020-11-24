@@ -28,7 +28,7 @@ public class BasicAuthentication {
     }
 
     @Test
-    public void authorizationTest(){
+    public void authorizationTest(){ // this test is adding new spartan test
         baseURI = ConfigurationReader.getProperty("SPARTAN.URI");
         Spartan spartan = new Spartan("Araz", "Male", 343242342343L);
         given().
