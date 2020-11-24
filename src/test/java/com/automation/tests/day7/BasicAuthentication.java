@@ -24,7 +24,7 @@ public class BasicAuthentication {
                 when().
                 get("/spartans").prettyPeek().
                 then().
-                statusCode(200);
+                statusCode(200);// request is successful ,and status code is 200
     }
 
     @Test
