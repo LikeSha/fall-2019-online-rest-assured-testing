@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.hamcrest.Matchers.*;
 
 public class APIKey {
-
+    // in postman : baseUrl + end point + Resource path + ?Query Parameter ( as API key is key-value combination)
     private final String API_KEY = "29055371";
 
     @BeforeAll
