@@ -40,7 +40,10 @@ public class BasicAuthentication {
                 then().
                 statusCode(403);
         /**
-         * user - doesn't have wrights to add, delete or edit users. Only read.
+         * user - doesn't have rights to add, delete or edit users. Only read.
+         * admin--has permission to add new users. so if you change this part :auth().basic("user", "user").
+         * to admin : auth().basic("admin", "admin"). you can add spartan ,because its allowed .then your statusCode
+         * also not 403 anymore .it would be 201
          * 403 - Forbidden access. You logged in, but you are trying to do something that you are not allowed.
          * Authentication problem - you didn't login
          * Authorization problem - you logged in but cannot do some actions.
