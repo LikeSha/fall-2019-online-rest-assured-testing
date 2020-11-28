@@ -25,7 +25,7 @@ public class BearerAuthentication {
                 when().
                 get("/sign").prettyPeek();// run this code first ,  then in console we can see access token and
                                             //refreshToken generated on the bottom of console
-                 // then we store this token into String variable
+                 // then we store this token into String variable then print as bellow to line of codes.
 
         String token = response.jsonPath().getString("accessToken");
         System.out.println("Token :: " + token);
