@@ -37,6 +37,7 @@ public class BearerAuthentication {
         //422 ok. because anyways we didn't get data
         //but, we supposed to get 401 status code
         get("/api/rooms").prettyPeek().then().statusCode(401);
+        // whatever inside get() bracket, its called resource path.
     }
 
     @Test
