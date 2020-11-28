@@ -63,6 +63,11 @@ public class BearerAuthentication {
         Response response = given().
                                       header("Authorization","Bearer " + getToken()).
                             when().get("/api/teams").prettyPeek();
+        // we are using method , and Bearer token is specified as header parameter in the request, the header name
+        //is "Authorization" , in case of basic authentication, it is also authorization.but in here, the value of
+        //authorization part consist of 2 things : type of authentication( Bearer) and value( getToken) .
+        //if it is basic it would be basic, if it is Bearer token we specify Bearer token and value.
+        //what is getToken()? getToken() it is a method that returns token as as String.
 
         response.then().statusCode(200);
     }
