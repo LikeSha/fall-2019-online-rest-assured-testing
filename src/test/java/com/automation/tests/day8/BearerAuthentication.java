@@ -28,7 +28,7 @@ public class BearerAuthentication {
                  // then we store this token into String variable then print as bellow to line of codes.
 
         String token = response.jsonPath().getString("accessToken");
-        System.out.println("Token :: " + token);
+        System.out.println("Token :: " + token); // token generated success on the very bottom of console
     }
 
     @Test
