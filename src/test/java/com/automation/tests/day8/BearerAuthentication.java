@@ -69,6 +69,9 @@ public class BearerAuthentication {
         //if it is basic it would be basic, if it is Bearer token we specify Bearer token and value.
         //what is getToken()? getToken() it is a method that returns token as as String.
 
+        //Bearer token should be provided as a header parameter in the request
+        // name= Authorization, Value= Bearer + TOKEN
+
         response.then().statusCode(200);
     }
 
