@@ -23,7 +23,9 @@ public class BearerAuthentication {
                 queryParam("email", "teacherva5@gmail.com").
                 queryParam("password", "maxpayne").
                 when().
-                get("/sign").prettyPeek();
+                get("/sign").prettyPeek();// run this code first ,  then in console we can see access token and
+                                            //refreshToken generated on the bottom of console
+                 // then we store this token into String variable
 
         String token = response.jsonPath().getString("accessToken");
         System.out.println("Token :: " + token);
