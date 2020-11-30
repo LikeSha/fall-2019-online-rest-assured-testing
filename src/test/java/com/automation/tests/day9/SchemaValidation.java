@@ -15,7 +15,7 @@ public class SchemaValidation {
     @Test
     public void schemaValidationTest(){
         //get json schema and store it in file object
-        File schema = new File("spartan_schema.json");
+        File schema = new File("spartan_schema.json"); // copy path-->path from content root
         get("/spartans/{id}", 35).
                 prettyPeek().
                 then().
