@@ -13,6 +13,10 @@ public class badSSL {
     public void badSSLCertificateTest(){
         /*
         no valid certificate --no handshake, no secure connection
+
+              Use relaxed HTTP validation with SSLContext protocol SSL.
+              This means that you'll trust all hosts regardless if the SSL certificate is invalid.
+              By using this method you don't need to specify a keystore or trust store.
          */
 
         baseURI = "https://untrusted-root.badssl.com/";
